@@ -26,11 +26,12 @@ func selectSQL(db *sql.DB) {
 }
 
 func main() {
-	db, err := sql.Open("mysql", "user:password@tcp(localhost:3306)/database")
+	// sql.Open("mysql", "user:password@tcp(host:port)/db_name)
+	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/ianBlog")
 	if err != nil {
 		panic(err)
 	}
 	defer db.Close()
 
-	selectSQL(db)
+	//	selectSQL(db)
 }
