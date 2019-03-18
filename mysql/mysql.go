@@ -27,7 +27,7 @@ func selectSQL(db *sql.DB) {
 
 func main() {
 	// sql.Open("mysql", "user:password@tcp(host:port)/db_name)
-	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/ianBlog")
+	db, err := sql.Open("mysql", "root:root@tcp(localhost:3306)/ianBlog")
 	if err != nil {
 		panic(err)
 	}
