@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./handler"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"github.com/sawadeeeen/go-training/echo/handler"
 )
 
 func main() {
