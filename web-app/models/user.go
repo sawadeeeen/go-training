@@ -3,6 +3,8 @@ package models
 import (
 	"regexp"
 	"time"
+
+	"github.com/wcl48/valval"
 )
 
 type User struct {
@@ -11,4 +13,15 @@ type User struct {
 	CreatedAt time.Time
 	UpdatedAT time.Time
 	DeletedAt time.Time
+}
+
+func UserValidate(user User) error {
+	Validator := valval.Object(valval.M{
+		"Name": valval.String(
+			valval.MaxLength(20),
+			valval.Regexp(regexp.MustCompile(`^[a-z ]+$`)),
+		),
+	})
+
+	return Validator.Validate(user)
 }
