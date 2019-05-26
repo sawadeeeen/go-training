@@ -1,0 +1,9 @@
+types:
+    injected:                 # サービス名
+        package: github.com/sawadeeeen/go-training/app/service  # ソースのpackage節
+        type: Injected        # 構造体(Class的なやつのGo版)の名前
+    service:
+        package: github.com/sawadeeeen/go-training/app/service
+        type: ServiceImpl
+        arguments:            # Symfony2と同じ記法(！)で引数を定義
+            - "@injected"     # 引数に渡すサービス名。%parameter_name%で値も渡せるらしい
